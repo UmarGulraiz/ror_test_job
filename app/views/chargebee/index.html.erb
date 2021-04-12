@@ -1,0 +1,21 @@
+<%= form_tag(update_subscription_chargebee_index_path, method: :post) do %>
+  <div>
+    <div>
+      <%=label_tag "Subscription ID"%>
+    </div>
+    <div>
+    <%= text_field_tag :subscription_id, nil, required: true %>
+    </div>
+  </div>
+  <div>
+    <div>
+      <%=label_tag "Subscription Date"%>
+    </div>
+    <div>
+      <%= date_field_tag :subscription_start_date, value = @tomorrow_date, options = {min: @tomorrow_date} %>
+    </div>
+  </div>
+  <button type="submit">
+    Submit
+  </button>
+<% end %>
